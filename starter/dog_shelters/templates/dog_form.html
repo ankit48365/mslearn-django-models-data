@@ -2,6 +2,9 @@
 
 {# TODO: Register crispy_forms_tags #}
 
+{# TODO: Load crispy_forms_tags #}
+{% load crispy_forms_tags %}
+
 {% block title %}
 Register dog at shelter
 {% endblock %}
@@ -11,7 +14,9 @@ Register dog at shelter
 <form method="POST">
     {% csrf_token %}
 
-    {{ form.as_p }}
+    <!-- {{ form.as_p }} -->
+    {{ form | crispy }}
+
 
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
